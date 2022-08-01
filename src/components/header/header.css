@@ -1,0 +1,115 @@
+/* ----------------- header ----------------- */
+.header {
+  position: relative;
+}
+
+/* ------------- Home ----------------- */
+.header__home {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+.header__home iframe {
+  position: absolute;
+  top: -70%;
+  left: -150%;
+  width: 400%;
+  height: 350%;
+  background: var(--home-page-video);
+  background-size: 100%;
+  background-position: center;
+}
+.video-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.home__block {
+  position: relative;
+  margin: 247px auto 110px auto;
+  padding: 0 24px;
+  z-index: 5;
+  color: var(--bacis-text-color);
+  font-size: 30px;
+}
+.home__subtitle {
+  padding-top: 50px;
+  font-family: var(--subtitle-font);
+  font-size: 14px;
+}
+.home__block h1 {
+  font-family: var(--title-font);
+  font-size: 68px;
+  line-height: 1;
+  font-weight: var(--font-light);
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 20px 0 0 0;
+}
+.home__block p {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 90%;
+  color: #ffaeaf;
+  margin: 0 auto;
+  padding: 15px 0 35px 0;
+  border-top: 2px solid #ffaeaf;
+}
+.home__block button {
+  display: block;
+  margin: 10px auto;
+  padding: 23px 10px;
+  width: 232px;
+  background-color: #00856f;
+  font-size: 13px;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: #fff;
+  transition: background-color 0.2s ease-in;
+}
+.home__block button:hover {
+  background-color: #49b2a0;
+}
+
+/* middle and lardge screens */
+@media (min-width: 768px) {
+  .home__block {
+    max-width: 40%;
+    margin-left: 20px;
+    margin-top: 257px;
+    margin-bottom: 179px;
+    justify-content: right;
+  }
+  .header__home img {
+    top: 0%;
+    left: 0%;
+    width: 300%;
+  }
+  .home__text {
+    margin-left: 20px;
+  }
+  .home__title {
+    font-size: 90px;
+  }
+}
+@media (min-width: 991px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .home__text {
+    font-size: 32px;
+  }
+  .home__title {
+    font-size: 118px;
+  }
+}

@@ -1,0 +1,142 @@
+.nav__logo-img {
+  width: 82px;
+  margin-left: 10%;
+}
+
+.header__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.4) 0%,
+    rgba(17, 17, 17, 0.2) 47%,
+    rgba(17, 17, 17, 0) 100%
+  );
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: row;
+  color: var(--bacis-text-color);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-size: 500;
+}
+.nav__item {
+  position: relative;
+  margin: 10px 20px;
+  color: var(--second-text-color);
+}
+
+.nav__link {
+  color: inherit;
+}
+.nav__link::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--bacis-text-color);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  transform-origin: left;
+}
+
+.nav__link:hover {
+  color: var(--bacis-text-color);
+}
+
+.nav__button {
+  position: relative;
+  z-index: 5;
+  flex: 0 0 22px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: none;
+}
+.nav__list-wrapper {
+  display: none;
+  position: absolute;
+  padding-top: 110px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 17, 17, 0.88);
+}
+
+
+/* ------------- burger ---------------------- */
+.icon-menu {
+    font-size: 30px;
+    margin: 12px 8px;
+    color: var(--bacis-text-color);
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .icon-menu:hover {
+    color: var(--second-text-color);
+  }
+  
+  .close-icon-menu {
+    font-size: 35px;
+    margin: 12px 0;
+    color: var(--bacis-text-color);
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .close-icon-menu:hover {
+    color: var(--second-text-color);
+  }
+  
+  .show-menu {
+    display: block;
+  }
+  
+/* ---- media ----- */
+@media (min-width: 991px) {
+  .nav__button {
+    display: none;
+  }
+  .nav__list-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: right;
+    align-items: center;
+    background: none;
+    padding-top: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .nav__list {
+    flex-direction: row;
+    margin: auto 50px;
+  }
+  .nav__socials-list {
+    margin: 0 15px;
+  }
+  .nav__link:hover:before {
+    transform: scaleX(1);
+    transition: transform 0.25s;
+  }
+}
