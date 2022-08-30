@@ -190,4 +190,26 @@ section {
     width: 100%;
   }
 }
+
+@-webkit-keyframes imageSlide {
+  from {
+    margin-left: 20%;
+    opacity: .3;
+  }
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes imageSlide {
+  from {
+    margin-left: 20%;
+    opacity: .3;
+  }
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=App.css.map */

@@ -1,4 +1,5 @@
 import Header from "../Header/Header";
+import AboutSection from "../About/AboutSection";
 // import Footer from '../footer/footer.js';
 import "./App.css";
 const mainInfo = {
@@ -13,7 +14,7 @@ function App() {
     <div className="wrapper">
       <Header {...mainInfo}/>
       <main className="main">
-        <section className="about">about</section>
+        <AboutSection />
       </main>
       <footer className="footer">
         <div className="container">footer</div>
