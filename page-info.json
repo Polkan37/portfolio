@@ -1,0 +1,12 @@
+{
+    "hero": {
+        "title": "Anastasia Dartovich",
+        "subTitle": "Photographer",
+        "buttonText": "Order",
+        "buttonAction": null
+      },
+      "about": {
+          "photo": "",
+          "text":""
+      }
+}

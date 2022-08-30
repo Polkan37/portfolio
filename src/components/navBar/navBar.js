@@ -1,60 +1,84 @@
-import logo from "./logo.png";
-import "./navBar.css";
-import { Component } from "react";
-import NavItemsList from "../navList/navItemsList";
-
-const topBarItems = [
+import React, {useEffect,useState} from "react";
+import "./navbar.css";
+import logo from "../../resources/img/logo.png";
+const navItems = [
   { name: "About", link: "#about", key: 1 },
   { name: "Portfolio", link: "#portfolio", key: 2 },
   { name: "Price", link: "#price", key: 3 },
   { name: "Contact me", link: "#contact", key: 4 },
 ];
-const navButton = {
-  burger: <i className="uil uil-bars icon-menu"></i>,
-  close: <i className="uil uil-times close-icon-menu"></i>,
-};
 
-function NavBar() {
+const list = navItems.map((item) => {
   return (
-    <nav className="header__nav">
-      <div className="container">
-        <div className="nav__menu">
-          <a href="index.html">
-            <img src={logo} alt="logo" className="nav__logo-img" />
-          </a>
-
-         <Navigation topBarItems={topBarItems} navigation={undefined} status={'closed'}/>
-        </div>
-      </div>
-    </nav>
+    <li className="nav__item" key={item.key}>
+      <a href={item.link} className="nav__link">
+        {item.name}
+      </a>
+    </li>
   );
+});
+
+function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
 }
 
-class Navigation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navigation: navButton.burger,
-      status: 'closed'
-    }
-  }
-  showMenu = () => {
-    this.setState({
-      status: (this.state.status === 'open' ? 'closed' : 'open'),
-      navigation: (this.state.navigation === navButton.burger ? navButton.close : navButton.burger)
-    })
-  }
-  render() {
-    const { topBarItems } = this.props;
-    const burgerMenu = this.state.status === 'open' ? (<NavItemsList items={topBarItems}/>) : ('');
-    return (
-      <div>
-        {burgerMenu}
+function NavBar() {
+  const [burger_button_class, setBurgerButtonClass] = useState("nav__button");
+  const [burger_class, setBurgerClass] = useState("nav__button-line");
+  const [menu_class, setMenuClass] = useState("nav__sidebar hidden");
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
 
-        <button onClick={this.showMenu} className="nav__button">{this.state.navigation}</button>
-      </div>
-    );
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+    if(windowSize.innerWidth > '772'){
+        setMenuClass("nav__items");
+        setBurgerButtonClass("nav__button hidden");
+      }
+      else {
+        setMenuClass("nav__sidebar hidden");
+        setBurgerButtonClass("nav__button");
+      }
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  },[windowSize.innerWidth]);
+
+
+  const updateMenu = () => {
+      if(!isMenuClicked){
+          setBurgerButtonClass("nav__button fixed-top-right");
+          setBurgerClass("nav__button-line clicked");
+          setMenuClass("nav__sidebar")
+      }
+      else {
+        setBurgerButtonClass("nav__button");
+        setBurgerClass("nav__button-line");
+        setMenuClass("nav__sidebar hidden")
+      }
+      setIsMenuClicked(!isMenuClicked);
   }
+
+  return (
+    <div className="nav container">
+      <a href="/" className="nav__logo">
+        <img src={logo} alt="Dartovich site logo" />
+      </a>
+      <nav className="nav__list">
+        <div className={burger_button_class} onClick={updateMenu}>
+          <div className={burger_class}></div>
+          <div className={burger_class}></div>
+          <div className={burger_class}></div>
+        </div>
+        <ul className={menu_class}>{list}</ul>
+      </nav>
+    </div>
+  );
 }
 
 export default NavBar;
