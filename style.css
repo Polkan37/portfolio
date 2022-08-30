@@ -402,7 +402,7 @@ section {
   }
 }
 
-/* ----- hero block --------------------------------- */
+/* -------------------- hero block --------------------------------- */
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,4 +520,6 @@ section {
     max-width: 290px;
   }
 }
+
+/* -------------------- about block --------------------------------- */
 /*# sourceMappingURL=style.css.map */
