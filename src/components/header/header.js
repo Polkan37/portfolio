@@ -1,8 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar';
-import telegrem from '../../resources/img/icons-telegram.png';
-import facebook from '../../resources/img/icons-facebook.png';
-import instagram from '../../resources/img/icons-instagram.png';
+import SideBar from '../SideBar/SideBar';
 import "./header.css";
 
 function Header({title, subTitle, buttonText, buttonAction}) {
@@ -19,19 +17,7 @@ function Header({title, subTitle, buttonText, buttonAction}) {
               </button>
             </div>
           </div>
-          <aside className="sidebar">
-            <div className="sidebar__line"></div>
-            <a href="/" className="sidebar__item" target="_blank">
-              <img src={telegrem} alt="telegram icon" />
-            </a>
-            <a href="/" className="sidebar__item" target="_blank">
-              <img src={instagram} alt="instagram icon" />
-            </a>
-            <a href="/" className="sidebar__item" target="_blank">
-              <img src={facebook} alt="facebook icon" />
-            </a>
-            <div className="sidebar__line"></div>
-          </aside>
+          <SideBar />
         </section>
       </header>
   )
