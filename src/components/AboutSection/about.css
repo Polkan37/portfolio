@@ -2,7 +2,7 @@
 .about {
   background: url("../../resources/img/bg-about.jpg");
   background-size: cover;
-  min-height: 100vh;
+  min-height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,20 +14,6 @@
 
 .about .about__title {
   margin-left: 62%;
-}
-
-.about .horisontal-line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  width: 100vw;
-  border-bottom: 2px solid #ffaeaf;
 }
 
 .about .about__contaioner {
@@ -76,33 +62,11 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 2% 0 2% -10%;
-  padding-left: 12%;
-  padding-right: 2em;
+  padding: 10% 20px 15% 12%;
 }
 
 .about .about__contaioner .about__text p {
   margin-bottom: 18px;
-}
-
-.backdrop {
-  margin-top: -50px;
-  margin-bottom: 200px;
-  padding: 60px 0;
-  background: #85b5b3;
-  width: 95%;
-}
-
-.title {
-  color: inherit;
-  font-size: 35px;
-  font-weight: 500;
-  margin-top: -35px;
-  padding: 0 5px;
-  font-family: 'Playfair Display', serif;
-  text-transform: uppercase;
-  margin-bottom: -2px;
-  background: #85b5b3;
-  display: inline-block;
 }
 
 @media (max-width: 992px) {

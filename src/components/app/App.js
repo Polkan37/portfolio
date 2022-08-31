@@ -1,5 +1,5 @@
 import Header from "../Header/Header";
-import AboutSection from "../About/AboutSection";
+import AboutSection from "../AboutSection/AboutSection";
 // import Footer from '../footer/footer.js';
 import "./App.css";
 const mainInfo = {

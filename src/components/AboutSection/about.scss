@@ -3,22 +3,13 @@
 .about {
     background: url('../../resources/img/bg-about.jpg');
     background-size: cover;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     justify-content: flex-end;
     position: relative;
 
     .about__title{
         margin-left: 62%;
-    }
-    .horisontal-line {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        left: 0;
-        top: 0px;
-        width: 100vw;
-        border-bottom: 2px solid #ffaeaf;
     }
     .about__contaioner {
         display: flex;
@@ -44,8 +35,7 @@
             justify-content: center;
             align-items: center;
             margin: 2% 0 2% -10%;
-            padding-left: 12%;
-            padding-right: 2em;
+            padding: 10% 20px 15% 12%;
 
             p{
                 margin-bottom: 18px;
@@ -54,26 +44,6 @@
     }
     
 }
-.backdrop {
-    margin-top: -50px;
-    margin-bottom: 200px;
-    padding: 60px 0;
-    background: #85b5b3;
-    width: 95%;
-}
-.title{
-    color: inherit;
-    font-size: 35px;
-    font-weight: 500;
-    margin-top: -35px;
-    padding: 0 5px;
-    font-family: 'Playfair Display', serif;
-    text-transform: uppercase;
-    margin-bottom: -2px;
-    background: #85b5b3;
-    display: inline-block;
-}
-
 @media (max-width: 992px) {
     .about{
         .about__title{
