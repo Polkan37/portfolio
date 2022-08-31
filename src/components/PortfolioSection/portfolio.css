@@ -46,9 +46,18 @@
   padding: 15px 60px;
 }
 
+@media (max-width: 992px) {
+  .portfolio .portfolio__container {
+    max-width: 80%;
+  }
+}
+
 @media (max-width: 525px) {
   .portfolio .portfolio__title {
     margin-right: 0;
+  }
+  .portfolio .portfolio__container {
+    max-width: 100%;
   }
   .portfolio .portfolio__container .portfolio__button {
     margin-top: 60px;

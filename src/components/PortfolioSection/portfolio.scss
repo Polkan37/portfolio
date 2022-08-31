@@ -29,18 +29,28 @@
         }
     }
     
+    @media (max-width: 992px) {
+        .portfolio__container {
+            max-width: 80%;
+        }
+    }
+
     @media (max-width: 525px) {
         .portfolio__title{
             margin-right: 0;
         }
 
         .portfolio__container {
+            max-width: 100%;
+
             .portfolio__button{
                 margin-top: 60px;
             }
         }
     }
 }
+
+
 /* -------------------- masonry --------------------------------- */
 .image {
     display: block;

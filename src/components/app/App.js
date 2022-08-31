@@ -5,7 +5,7 @@ import "./App.css";
 const mainInfo = {
   title: 'Anastasia Dartovich',
   subTitle: 'Photographer',
-  buttonText: 'Order Photos',
+  buttonText: 'Order Photo Shoot',
   buttonAction: null
 }
 
