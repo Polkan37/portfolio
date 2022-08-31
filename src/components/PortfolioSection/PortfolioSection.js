@@ -34,7 +34,7 @@ function PortfolioSection() {
       setColumns("3");
     }
     return () => {
-      window.addEventListener("resize", handleWindowResize);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, [windowSize.innerWidth]);
 
