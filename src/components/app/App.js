@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import AboutSection from "../AboutSection/AboutSection";
-// import Footer from '../footer/footer.js';
+import PortfolioSection from "../PortfolioSection/PortfolioSection";
 import "./App.css";
 const mainInfo = {
   title: 'Anastasia Dartovich',
@@ -15,6 +15,7 @@ function App() {
       <Header {...mainInfo}/>
       <main className="main">
         <AboutSection />
+        <PortfolioSection />
       </main>
       <footer className="footer">
         <div className="container">footer</div>

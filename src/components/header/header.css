@@ -68,22 +68,7 @@
 }
 
 .hero__content .hero__button {
-  background-color: #00856f;
-  color: #fff;
-  font-size: 16px;
-  padding: 20px 70px;
   margin-left: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: background-color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
-  border: 1px solid rgba(255, 255, 255, 0);
-}
-
-.hero__content .hero__button:hover {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: #49b2a0;
 }
 
 @media (max-width: 992px) {

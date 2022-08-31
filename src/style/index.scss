@@ -83,7 +83,7 @@ section {
 }
 .backdrop {
     margin-top: -50px;
-    margin-bottom: 200px;
+    margin-bottom: 25%;
     padding: 60px 0;
     background: #85b5b3;
     width: 95%;
@@ -110,7 +110,19 @@ section {
     width: 100vw;
     border-bottom: 2px solid #ffaeaf;
 }
-
+.button {
+    background-color: #00856f;
+    color: #fff;
+    padding: 20px 70px;
+    justify-content: center;
+    transition: background-color 0.3s ease-out;
+    border: 1px solid rgba(255,255,255,0);
+    
+    &:hover {
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: #49b2a0;
+    }
+}
 /* ------------ animation ----------- */
 // clicked
 .nav__button-line {

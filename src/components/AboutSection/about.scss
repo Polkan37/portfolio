@@ -3,7 +3,6 @@
 .about {
     background: url('../../resources/img/bg-about.jpg');
     background-size: cover;
-    min-height: 90vh;
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -25,6 +24,7 @@
     
             img {
                 width: inherit;
+                max-width: 500px;
             }
         }
         .about__text {

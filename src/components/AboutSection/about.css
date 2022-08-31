@@ -2,7 +2,6 @@
 .about {
   background: url("../../resources/img/bg-about.jpg");
   background-size: cover;
-  min-height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,6 +42,7 @@
 
 .about .about__contaioner .about__photo img {
   width: inherit;
+  max-width: 500px;
 }
 
 .about .about__contaioner .about__text {

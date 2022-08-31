@@ -1,0 +1,48 @@
+/* -------------------- portfolio block --------------------------------- */
+
+.portfolio {
+    background: url('../../resources/img/bg-galery.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    .backdrop {
+        background: #6b6b6b;
+    }
+    .portfolio__title{
+        background: #6b6b6b;
+        margin-right: 62%;
+    }
+    .portfolio__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+        margin-top: 30px;
+        max-width: 70%;
+
+        .portfolio__button{
+            margin-top: 20px;
+            padding: 15px 60px;
+        }
+    }
+    
+    @media (max-width: 525px) {
+        .portfolio__title{
+            margin-right: 0;
+        }
+
+        .portfolio__container {
+            .portfolio__button{
+                margin-top: 60px;
+            }
+        }
+    }
+}
+/* -------------------- masonry --------------------------------- */
+.image {
+    display: block;
+    width: 100%;
+}
