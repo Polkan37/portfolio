@@ -1,46 +1,27 @@
 /* ----- hero block --------------------------------- */
 .hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
 .hero .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero__content {
   z-index: 2;
   max-width: 450px;
 }
-
 .hero__content .hero__title {
   position: relative;
   font-size: 93px;
-  line-height: calc(100 / 93 * 100%);
+  line-height: 107.5268817204%;
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
-
 .hero__content .hero__title::after {
   content: "";
   width: 100%;
@@ -54,7 +35,6 @@
   -webkit-animation-name: linegrow;
           animation-name: linegrow;
 }
-
 .hero__content .hero__text {
   color: #ffaeaf;
   font-size: 50px;
@@ -66,11 +46,9 @@
   -webkit-animation-name: slidein;
           animation-name: slidein;
 }
-
 .hero__content .hero__button {
   margin-left: 20px;
 }
-
 @media (max-width: 992px) {
   .hero__content .hero__title {
     font-size: 75px;
@@ -80,26 +58,15 @@
     font-size: 40px;
   }
 }
-
 @media (max-width: 525px) {
   .hero__content {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .hero__content .hero__title {
     font-size: 65px;
     max-width: 290px;
   }
-}
-/*# sourceMappingURL=header.css.map */
+}/*# sourceMappingURL=header.css.map */

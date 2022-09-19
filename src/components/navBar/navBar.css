@@ -1,67 +1,40 @@
 /* -------------------- navigation topbar --------------- */
 .nav {
   min-height: 110px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, rgba(17, 17, 17, 0.3)), color-stop(30%, rgba(17, 17, 17, 0)));
+  justify-content: space-between;
+  align-items: center;
   background: linear-gradient(180deg, rgba(17, 17, 17, 0.3) 3%, rgba(17, 17, 17, 0) 30%);
 }
-
 .nav .nav__logo img {
   height: 80px;
   margin: 10px 0;
 }
-
 .nav .nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .nav .nav__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0px 0px 0px 125px;
 }
-
 @media (max-width: 992px) {
   .nav .nav__items {
     margin: 0px 0px 0px 80px;
   }
 }
-
 @media (max-width: 767px) {
   .nav .nav__items {
     margin: 0px 0px 0px 40px;
   }
 }
-
 .nav .nav__sidebar {
   width: 320px;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 0;
   right: 0;
@@ -70,42 +43,29 @@
   z-index: 5;
   font-size: 20px;
 }
-
 .nav .nav__sidebar .nav__item:not(:last-child) {
   margin: 0px 0px 20px 0px;
 }
-
 .nav .nav__button {
   height: 20px;
   width: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   z-index: 7;
 }
-
 .nav .nav__button .nav__button-line {
   width: 30px;
   height: 2px;
   background-color: #fff;
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
-
 .nav .nav__item {
   position: relative;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
-  -webkit-transition: left 0.3s ease 0s;
   transition: left 0.3s ease 0s;
 }
-
 .nav .nav__item::before {
   content: "";
   width: 100%;
@@ -114,43 +74,29 @@
   position: absolute;
   left: 0;
   bottom: -5px;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: -webkit-transform 0.25s;
+  transform: scaleX(0);
   transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
 }
-
 .nav .nav__item:hover:before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: -webkit-transform 0.25s;
+  transform: scaleX(1);
   transition: transform 0.25s;
-  transition: transform 0.25s, -webkit-transform 0.25s;
 }
-
 .nav .nav__item:not(:last-child) {
   margin: 0px 50px 0px 0px;
 }
-
 .nav .nav__item .nav__link {
   color: inherit;
-  line-height: calc(24 / 16 * 100%);
+  line-height: 150%;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
 }
-
 .nav .nav__phone {
   color: inherit;
   margin-left: auto;
   margin-right: 20px;
 }
-
 .nav .nav__phone:hover {
   color: #c6c6c6;
 }
@@ -168,5 +114,4 @@
 
 .visible {
   scale: 1;
-}
-/*# sourceMappingURL=navbar.css.map */
+}/*# sourceMappingURL=navbar.css.map */
