@@ -8,7 +8,7 @@ function AboutSection() {
     <section className="about">
         <div className="backdrop">
             <div className="horisontal-line">
-                <h2 className="about__title title">About me</h2>
+                <h2 className="about__title title" id="about">About me</h2>
             </div>
 
             <div className="about__contaioner container">
