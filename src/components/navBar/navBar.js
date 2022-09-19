@@ -1,12 +1,7 @@
 import React, {useEffect,useState} from "react";
-import "./navbar.css";
+import "./navBar.css";
 import logo from "../../resources/img/logo.png";
-const navItems = [
-  { name: "About", link: "#about", key: 1 },
-  { name: "Portfolio", link: "#portfolio", key: 2 },
-  { name: "Price", link: "#price", key: 3 },
-  { name: "Contact me", link: "#contact", key: 4 },
-];
+import navItems from '../../constants/navItems';
 
 const list = navItems.map((item) => {
   return (

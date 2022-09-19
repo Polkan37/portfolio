@@ -1,13 +1,9 @@
 import Header from "../Header/Header";
 import AboutSection from "../AboutSection/AboutSection";
 import PortfolioSection from "../PortfolioSection/PortfolioSection";
+import mainInfo from "../../constants/mainInfo";
 import "./App.css";
-const mainInfo = {
-  title: 'Anastasia Dartovich',
-  subTitle: 'Photographer',
-  buttonText: 'Order Photo Shoot',
-  buttonAction: null
-}
+
 
 function App() {
   return (
