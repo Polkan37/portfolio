@@ -1,0 +1,69 @@
+/* ----- hero block --------------------------------- */
+.hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.hero__content {
+    z-index: 2;
+    max-width: 450px;
+
+    .hero__title {
+        position: relative;
+        font-size: 93px;
+        line-height: calc(100 / 93 * 100%);
+        font-weight: 700;
+        font-family: 'Playfair Display', serif;
+    }
+    .hero__title::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: #ffaeaf;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        animation-duration: 2s;
+        animation-name: linegrow;
+    }
+    .hero__text {
+        color: #ffaeaf;
+        font-size: 50px;
+        line-height: 180%;
+        padding-bottom: 20px;
+        margin-top: 20px;
+        animation-duration: 1.5s;
+        animation-name: slidein;
+    }
+    .hero__button {
+        margin-left: 20px;
+    }
+    @media (max-width: $small-desktop-width) {
+        .hero__title {
+            font-size: 75px;
+            max-width: 350px;
+        }
+        .hero__text {
+            font-size: 40px;
+        }
+    }
+    @media (max-width: $mobile-width) {
+        & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero__title {
+            font-size: 65px;
+            max-width: 290px;
+        }
+    }
+}
