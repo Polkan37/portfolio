@@ -1,4 +1,5 @@
 /* -------------------- portfolio block --------------------------------- */
+@import '../../style/variables';
 
 .portfolio {
     background: url('../../resources/img/bg-galery.jpg');
@@ -58,5 +59,19 @@
 
     &:hover {
         box-shadow: 3px 3px 5px rgba(0,0,0,.3);
+    }
+}
+.portfolio__items{
+    column-count: 3;
+}
+
+@media (max-width: $tablet-width) {
+    .portfolio__items{
+        column-count: 2;
+    }
+}
+@media (max-width: $mobile-width) {
+    .portfolio__items{
+        column-count: 1;
     }
 }

@@ -2,6 +2,7 @@ import React, {useEffect,useState} from "react";
 import "./navBar.css";
 import logo from "../../resources/img/logo.png";
 import navItems from '../../constants/navItems';
+const tabletWidth = 828;
 
 const list = navItems.map((item) => {
   return (
@@ -31,7 +32,7 @@ function NavBar() {
     }
 
     window.addEventListener('resize', handleWindowResize);
-    if(windowSize.innerWidth > '772'){
+    if(windowSize.innerWidth > tabletWidth){
         setMenuClass("nav__items");
         setBurgerButtonClass("nav__button hidden");
       }

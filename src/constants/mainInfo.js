@@ -1,7 +1,7 @@
 const mainInfo = {
   title: "Anastasia Dartovich",
   subTitle: "Photographer",
-  buttonText: "Order Photo Shoot",
+  buttonText: "Order Photos",
   buttonAction: null,
 };
 

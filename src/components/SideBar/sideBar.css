@@ -19,7 +19,7 @@
   border-radius: 50%;
   cursor: pointer;
 }
-@media (max-width: 767px) {
+@media (max-width: 878px) {
   .sidebar {
     display: none;
   }

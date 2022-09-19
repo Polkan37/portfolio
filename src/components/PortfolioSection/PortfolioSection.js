@@ -1,35 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Masonry from "../Masonry/Masonry";
 import "./portfolio.css";
-
 import imageUrls from '../../constants/images';
-
-function getWindowSize() {
-  const { innerWidth, innerHeight } = window;
-  return { innerWidth, innerHeight };
-}
+const minAmounOfImageInGallery = 7;
 
 function PortfolioSection() {
-  const [windowSize, setWindowSize] = useState(getWindowSize());
-  const [columns, setColumns] = useState("3");
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
+  let [imgAmount, setImgAmount] = useState(minAmounOfImageInGallery);
+  const [display, setDisplay] = useState('block');
 
-    window.addEventListener("resize", handleWindowResize);
-    if (windowSize.innerWidth < "878" && windowSize.innerWidth > "525" ) {
-      setColumns("2");
-    }
-    else if (windowSize.innerWidth < "525") {
-      setColumns("1");
-    } else {
-      setColumns("3");
-    }
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, [windowSize.innerWidth]);
+  const showMore = () => {
+    if((imageUrls.length - imgAmount) > minAmounOfImageInGallery) {
+      imgAmount += minAmounOfImageInGallery
+     }
+     else {
+      imgAmount += (imageUrls.length - imgAmount);
+      setDisplay("none");
+     }
+    console.log(imgAmount);
+    return setImgAmount(imgAmount);
+  }
 
   return (
     <section className="portfolio">
@@ -39,9 +28,9 @@ function PortfolioSection() {
         </div>
         <div className="portfolio__container container">
           <div className="portfolio__galery">
-            <Masonry imageUrls={imageUrls} columnCount={columns} gap="15" />
+            <Masonry imageUrls={imageUrls} gap="10" size={imgAmount}/>
           </div>
-          <button className="portfolio__button button">Show more</button>
+          <button className="portfolio__button button" onClick={showMore} style={{display: display}}>Show more</button>
         </div>
       </div>
     </section>
