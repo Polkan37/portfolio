@@ -9,8 +9,6 @@ export default function Masonry({imageUrls, columnCount, gap, size = 7}) {
                 <img src={img.url} className="image" alt={img.alt} />
               </li>
           )}
-
-          
       </ul>
     )
   }

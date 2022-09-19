@@ -57,17 +57,23 @@
 .portfolio__items {
   -moz-column-count: 3;
        column-count: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
 }
 
 @media (max-width: 878px) {
   .portfolio__items {
     -moz-column-count: 2;
          column-count: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
   }
 }
 @media (max-width: 525px) {
   .portfolio__items {
     -moz-column-count: 1;
          column-count: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
   }
 }/*# sourceMappingURL=portfolio.css.map */

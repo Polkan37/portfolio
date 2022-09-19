@@ -44,7 +44,7 @@
     }
     
 }
-@media (max-width: 992px) {
+@media (max-width: $small-desktop-width) {
     .about{
         .about__title{
         margin-left: 40%;
@@ -64,7 +64,7 @@
         }
     }
 }
-@media (max-width: 525px) {
+@media (max-width: $mobile-width) {
     .about {
         .about__title{
         margin-left: 0;
