@@ -6,17 +6,12 @@
   margin: 0;
   padding: 0;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
+  width: 500px;
   background-color: #85b5b3;
   margin: auto;
   color: #fff;
 }
-
-.order-modal__close {
+.order-modal .order-modal__close {
   margin: 0;
   position: absolute;
   top: 10px;
@@ -28,72 +23,68 @@
   cursor: pointer;
   background: none;
 }
-
-input[type=radio] {
+.order-modal .oder-modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order-modal input[type=radio] {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
   margin: 0;
 }
-
-.oder-modal__select {
+.order-modal .oder-modal__select {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  max-width: 350px;
+  max-width: 420px;
   width: 100%;
 }
-
-.oder-modal__select-item {
-  padding: 0.5em 1em;
+.order-modal .oder-modal__select-item {
+  padding: 0.45em 0.9em;
   border: 2px solid #ffaeaf;
   background: transparent;
   color: #fff;
   border-radius: 4px;
   font-family: "Teko";
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
-
-.selected {
+.order-modal .selected {
   background: #ffaeaf;
 }
-
-.oder-modal__select-item:hover {
+.order-modal .oder-modal__select-item:hover {
   background: #ffaeaf;
 }
-
-.oder-modal__contacts {
+.order-modal .oder-modal__contacts {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
   margin: 1em auto;
 }
-
-.oder-modal__field {
+.order-modal .oder-modal__field {
   margin: 0 1em;
   padding: 0 0.5em;
-  width: 155px;
+  width: 185px;
   border-radius: 4px;
-  line-height: 1.5;
+  line-height: 2;
   border: 1px solid #6b6b6b;
 }
-
-.oder-modal__textarea {
+.order-modal .oder-modal__textarea {
   display: block;
   border-radius: 8px;
   border: 1px solid #6b6b6b;
   padding: 0.5em;
 }
-
-.oder-modal__textarea:active {
+.order-modal .oder-modal__textarea:active {
   border: 0.5px solid #6b6b6b;
 }
-
-.oder-modal__button {
+.order-modal .oder-modal__button {
   margin: 1em auto 2em;
   border-radius: 8px;
   border: 1px solid #2d5c54;
@@ -101,17 +92,15 @@ input[type=radio] {
   font-size: 14px;
   padding: 15px 40px;
 }
-
-.oder-modal__title {
+.order-modal .oder-modal__title {
   margin-top: 0;
   font-size: 30px;
 }
-
-.horisontal-line {
+.order-modal .horisontal-line {
   position: unset;
   height: 50px;
   width: 100%;
   align-items: flex-end;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }/*# sourceMappingURL=orderModal.css.map */

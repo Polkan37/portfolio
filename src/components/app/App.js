@@ -1,3 +1,4 @@
+import React  from 'react';
 import Header from "../Header/Header";
 import AboutSection from "../AboutSection/AboutSection";
 import PortfolioSection from "../PortfolioSection/PortfolioSection";
