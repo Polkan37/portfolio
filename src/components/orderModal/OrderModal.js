@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./orderModal.css";
 import validator from "validator";
 import axios from 'axios';
+import telegramLogin from "../../constants/telegramInfo";
 
 function OrderModal() {
   const [message, setMessage] = useState("");
@@ -13,9 +14,7 @@ function OrderModal() {
 
 
   function handleSubmit(e){
-    const TOKEN = "5334344703:AAFkugs2Xrj_gFiqzsbUrKJD9Qkt28CHZA8";
-    const CHAT_ID = "-1001582276476";
-    const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+    const URL_API = `https://api.telegram.org/bot${telegramLogin.token}/sendMessage`;
 
       let message = `&#9989; <i>Заявка с сайта Dartovich portfolio!</i>\n`;
       message += "<b>Отправитель: </b>" + userName + "\n";
@@ -23,7 +22,7 @@ function OrderModal() {
       message += "<b>сообщение: </b>" + userMessage + "\n";
 
       axios.post(URL_API, {
-          chat_id: CHAT_ID,
+          chat_id:telegramLogin.chatId,
           parse_mode: "html",
           text: message,
         })
