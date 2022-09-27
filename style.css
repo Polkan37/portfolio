@@ -679,31 +679,31 @@ section {
   height: fit-content;
   margin-top: 30px;
 }
-.price .price__container .price__card {
+.price .price__card {
   border: 2px solid #ffaeaf;
   padding: 40px;
   max-width: 300px;
   transition: background-color 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
-.price .price__container .price__card:hover {
+.price .price__card:hover {
   background-color: #fff;
 }
-.price .price__container .price__card:hover.card__button:hover {
+.price .price__card:hover.card__button:hover {
   background-color: #ffaeaf;
   color: #fff;
 }
-.price .price__container .price__card .card__title {
+.price .price__card .card__title {
   position: relative;
   color: #6b6b6b;
   font-size: 20px;
   font-weight: 700;
   font-family: "Playfair Display", serif;
 }
-.price .price__container .price__card .card__title::before {
+.price .price__card .card__title::before {
   content: "Пакет";
   position: absolute;
   top: -20px;
@@ -711,13 +711,13 @@ section {
   transform: translateX(-50%);
   font-size: 18px;
 }
-.price .price__container .price__card .card__price {
+.price .price__card .card__price {
   position: relative;
   color: #6b6b6b;
   font-size: 37px;
-  margin: 25px auto 15px auto;
+  margin: 25px auto 20px auto;
 }
-.price .price__container .price__card .card__price::after {
+.price .price__card .card__price::after {
   content: "";
   position: absolute;
   top: 40px;
@@ -726,24 +726,28 @@ section {
   width: 100%;
   background-color: #ffaeaf;
 }
-.price .price__container .price__card .card__info {
+.price .price__card .card__info {
   width: 250px;
-  height: 170px;
+  min-height: 175px;
   color: #6b6b6b;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.price .price__container .price__card .card__info ul {
+.price .price__card .card__info ul {
   text-align: left;
 }
-.price .price__container .price__card .card__info li {
+.price .price__card .card__info li {
   margin-bottom: 20px;
 }
-.price .price__container .price__card .card__info li::before {
+.price .price__card .card__info li::before {
   content: "✓";
   color: #00856f;
   font-size: 14px;
+  margin-right: 5px;
 }
-.price .price__container .price__card .card__button {
+.price .price__card .card__button {
   color: #6b6b6b;
   width: 205px;
   height: 40px;
@@ -756,7 +760,95 @@ section {
   transition: background-color 0.3s ease;
   border: 2px solid #ffaeaf;
 }
-.price .price__container .price__card .card__button:hover {
+.price .price__card .card__button:hover {
   background-color: #ffaeaf;
   color: #fff;
+}
+.price .mobile-price__container {
+  width: 100%;
+  margin-top: 30px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.price .mobile-price__container .triangle {
+  position: absolute;
+  top: 87px;
+  right: 48%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #FFFFFF;
+  transition: right ease-out 0.5s;
+}
+.price .mobile-price__container .mobile-price__titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  border-bottom: 2px solid #fff;
+}
+.price .mobile-price__container .mobile-price__titles .card__title {
+  position: relative;
+  margin: 50px auto 20px;
+  color: #6b6b6b;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+.price .mobile-price__container .mobile-price__titles .card__title::before {
+  content: "Пакет";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-family: "Playfair Display", serif;
+}
+.price .mobile-price__container .price__card {
+  border: none;
+  padding: 20px 40px 40px;
+  max-width: 300px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.price .mobile-price__container .price__card:hover {
+  background-color: transparent;
+}
+.price .mobile-price__container .price__card:hover.card__button:hover {
+  background-color: #ffaeaf;
+  color: #fff;
+}
+.price .mobile-price__container .price__card .card__price {
+  position: relative;
+  color: #6b6b6b;
+  font-size: 25px;
+  margin: 0px auto 30px auto;
+  width: 100%;
+  text-align: center;
+}
+.price .mobile-price__container .price__card .card__price::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ffaeaf;
+}
+
+@media (min-width: 525px) {
+  .mobile-price__container {
+    margin-top: 0px !important;
+    max-width: 350px;
+  }
 }/*# sourceMappingURL=style.css.map */
