@@ -5,6 +5,7 @@ import PortfolioSection from "../PortfolioSection/PortfolioSection";
 import mainInfo from "../../constants/mainInfo";
 import "./App.css";
 import PriceSection from '../../PriceSection/PriceSection';
+import Footer from '../../Footer/Footer';
 
 
 function App() {
@@ -16,9 +17,7 @@ function App() {
         <PortfolioSection />
         <PriceSection />
       </main>
-      <footer className="footer">
-        <div className="container">footer</div>
-      </footer>
+      <Footer />
     </div>
   );
 }

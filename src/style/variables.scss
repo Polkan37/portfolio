@@ -5,3 +5,8 @@
 $mobile-width: 525px; 
 $tablet-width: 878px;
 $small-desktop-width: 992px;
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}

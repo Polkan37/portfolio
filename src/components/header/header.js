@@ -5,7 +5,7 @@ import "./header.css";
 
 function Header({title, subTitle, buttonText, buttonAction}) {
   return (
-    <header className="header">
+    <header className="header" id="top">
         <NavBar />
         <section className="hero">
           <div className="container">

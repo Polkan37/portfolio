@@ -62,7 +62,7 @@ function NavBar() {
 
   return (
     <div className="nav container">
-      <a href="/" className="nav__logo">
+      <a href="#top" className="nav__logo">
         <img src={logo} alt="Dartovich site logo" />
       </a>
       <nav className="nav__list">
