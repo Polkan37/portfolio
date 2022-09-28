@@ -6,6 +6,7 @@ import mainInfo from "../../constants/mainInfo";
 import "./App.css";
 import PriceSection from '../PriceSection/PriceSection';
 import Footer from '../Footer/Footer';
+import ContactSection from '../ContactSection/ContactSection';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <AboutSection />
         <PortfolioSection />
         <PriceSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
