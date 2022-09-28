@@ -1,6 +1,6 @@
 import React from "react";
-import links from "../constants/sideBarIcons";
-import logo from "../resources/img/logo.png";
+import links from "../../constants/sideBarIcons";
+import logo from "../../resources/img/logo.png";
 import "./footer.css";
 
 function Footer() {
@@ -36,15 +36,6 @@ function Footer() {
               );
             })}
           </ul>
-          {/* <a href="https://t.me/dartovich_n" className="social-links__item">
-                  <img src="./src/resources/img/icons-telegram.png" alt="telegram icon" />
-              </a>
-              <a href="https://imstagram.com/" className="social-links__item">
-                  <img src="./src/resources/img/icons-instagram.png" alt="instagram icon" />
-              </a>
-              <a href="https://facebook.com" className="social-links__item">
-                  <img src="./src/resources/img/icons-facebook.png" alt="facebook icon" />
-              </a> */}
         </div>
       </div>
     </footer>

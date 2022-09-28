@@ -4,8 +4,8 @@ import AboutSection from "../AboutSection/AboutSection";
 import PortfolioSection from "../PortfolioSection/PortfolioSection";
 import mainInfo from "../../constants/mainInfo";
 import "./App.css";
-import PriceSection from '../../PriceSection/PriceSection';
-import Footer from '../../Footer/Footer';
+import PriceSection from '../PriceSection/PriceSection';
+import Footer from '../Footer/Footer';
 
 
 function App() {
