@@ -29,7 +29,35 @@
     border-radius: 16px;
     padding: 20px;
     margin: 50px 0;
+    color: #111;
+    position: relative;
+
+    .modal-done{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background-color: #fff;
+        text-align: center;
+        transform: scale(0);
+        transition: transform ease .5s;
+    
+        & p {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00856f;
+            font-size: 100px;
+            font-weight: 900;
+            border-radius: 50%;
+            opacity:  1;
+        }
+    }
 }
+
 .form__contact-form {
     margin: 20px 44px 20px 20px;
     width: 100%;
@@ -63,6 +91,7 @@
         font-weight: 700;
         font-size: 12px;
         text-transform: uppercase;
+        color: #fff;
         background-color: #ffaeaf;
         border: 2px solid #ffaeaf;
         transition: background-color 0.3s ease;
