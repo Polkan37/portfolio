@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from "react";
+import SendForm from "./SendForm";
 const patterns = {
   name: /[a-zA-Zа-яА-Я]{2,}/,
   phone: /[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}/,
@@ -28,12 +29,10 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitting(true);
-
-    Object.entries(formData).map(([name, value]) => (
-      console.log(name + ': ' + value.toString())
-    ))
     document.getElementById('message-sent').style.transform = 'scale(1)';
+    console.log('formData', formData);
     setTimeout(() => {
+      SendForm(formData, 'fetch');
       setSubmitting(false);
       setFormData({
         reset: true,
