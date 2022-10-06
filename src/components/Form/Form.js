@@ -1,9 +1,11 @@
 import React, { useReducer, useState } from "react";
 const patterns = {
-  name: '',
-  phone: /(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/,
-  email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  name: /[a-zA-Zа-яА-Я]{2,}/,
+  phone: /[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}/,
+  email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  message: /[\S\s]+[\S]+/,
 }
+let fieldValidaitonStatus = {name: false, phone: false, email: false, message: false }
 
 const formReducer = (state, event) => {
   if (event.reset) {
@@ -36,22 +38,62 @@ function Form() {
       setFormData({
         reset: true,
       });
+      fieldValidaitonStatus = {name: false, phone: false, email: false};
+      document.getElementById('form-button').classList.remove('active');
+      document.getElementById('name').style.removeProperty('border');
+      document.getElementById('phone').style.removeProperty('border');
+      document.getElementById('email').style.removeProperty('border');
+      document.getElementById('msg').style.removeProperty('border');
       document.getElementById('message-sent').style.transform = 'scale(0)';
     }, 1500);
   };
-
+  
   const handleChange = (event) => {
     
     switch(event.target.name) {
+      case 'name':
+        if(patterns.name.test(event.target.value)) {
+          document.getElementById('name').style.border = '1px solid #00856f';
+          fieldValidaitonStatus.name = true;
+        } else {
+          document.getElementById('name').style.border = '1px solid red';
+          fieldValidaitonStatus.name = false;
+        }
+        break;
       case 'phone':
-        patterns.phone.test(event.target.value) ? document.getElementById('phone').style.border = '': document.getElementById('phone').style.border = '1px solid red';
+        if(patterns.phone.test(event.target.value)) {
+          document.getElementById('phone').style.border = '1px solid #00856f';
+          fieldValidaitonStatus.phone = true;
+        } else {
+          document.getElementById('phone').style.border = '1px solid red';
+          fieldValidaitonStatus.phone = false;
+        }
         break;
       case 'email':
-        patterns.email.test(event.target.value) ? document.getElementById('email').style.border = '': document.getElementById('email').style.border = '1px solid red';
+        if(patterns.email.test(event.target.value)) {
+          document.getElementById('email').style.border = '1px solid #00856f';
+          fieldValidaitonStatus.email = true;
+        } else {
+          document.getElementById('email').style.border = '1px solid red';
+          fieldValidaitonStatus.email = false;
+        }
         break;
+      case 'message':
+          if(patterns.message.test(event.target.value)) {
+            document.getElementById('msg').style.border = '1px solid #00856f';
+            fieldValidaitonStatus.message = true;
+          } else {
+            document.getElementById('msg').style.border = '1px solid red';
+            fieldValidaitonStatus.message = false;
+          }
+          break;
       default:
         break;
     }
+    
+    const status = Object.values(fieldValidaitonStatus).every(item => item === true);
+    status ? document.getElementById('form-button').classList.add('active') : document.getElementById('form-button').classList.remove('active');
+    
     setFormData({
       name: event.target.name,
       value: event.target.value,
@@ -76,7 +118,7 @@ function Form() {
             required
           />
           <input type="tel" id="phone" name="phone"
-            pattern="^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$"
+            pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}"
             placeholder="Телефон"
             onChange={handleChange}
             value={formData.phone || ""}
@@ -99,7 +141,7 @@ function Form() {
             value={formData.message || ""}
             required
           ></textarea>
-          <button type="submit" className="form__button">
+          <button type="submit" className="form__button" id="form-button">
             Отправить заявку
           </button>
         </fieldset>
