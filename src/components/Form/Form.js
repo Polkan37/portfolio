@@ -1,20 +1,40 @@
 import React, { useReducer, useState } from "react";
-import SendForm from "./SendForm";
-const patterns = {
-  name: /[a-zA-Zа-яА-Я]{2,}/,
-  phone: /[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}/,
-  email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-  message: /[\S\s]+[\S]+/,
-};
+import FormValidation from "./formValidation";
+import sendForm from "./sendForm";
+
 let fieldValidaitonStatus = {
   name: false,
   phone: false,
   email: false,
   message: false,
 };
+function showModal(id, status) {
+  status
+    ? (document.getElementById(id).style.transform = "scale(1)")
+    : (document.getElementById(id).style.transform = "scale(0)");
+}
+
+function buttonActive(id, status) {
+  status
+    ? document.getElementById(id).classList.add("active")
+    : document.getElementById(id).classList.remove("active");
+
+  document.getElementById(id).disabled = !status;
+}
+
+function resetFormStyles(state) {
+  for (const [key] of Object.entries(state)) {
+    document.getElementById(key).style.removeProperty("border");
+  }
+  buttonActive("form-button", false);
+}
 
 const formReducer = (state, event) => {
   if (event.reset) {
+    fieldValidaitonStatus = { name: false, phone: false, email: false, message: false};
+    
+    resetFormStyles(state);
+    showModal("message-sent", false);
     return {
       name: "",
       phone: "",
@@ -31,42 +51,25 @@ const formReducer = (state, event) => {
 function Form() {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
     setSubmitting(true);
-    document.getElementById("message-sent").style.transform = "scale(1)";
+    showModal("message-sent", true);
+    sendForm(formData, 'fetch');
+
     setTimeout(() => {
-      SendForm(formData, "fetch");
       setSubmitting(false);
-      setFormData({
-        reset: true,
-      });
-      fieldValidaitonStatus = { name: false, phone: false, email: false };
-      for (const [key] of Object.entries(formData)) {
-        document.getElementById(key).style.removeProperty("border");
-      }
-      document.getElementById("form-button").classList.remove("active");
-      document.getElementById("message-sent").style.transform = "scale(0)";
+      setFormData({reset: true});
     }, 1500);
   };
 
   const handleChange = (event) => {
-    const title = event.target.name;
-    const value = event.target.value;
-    if (patterns[title].test(value)) {
-      document.getElementById([title]).style.border = "1px solid #00856f";
-      fieldValidaitonStatus[title] = true;
-    } else {
-      document.getElementById(title).style.border = "1px solid red";
-      fieldValidaitonStatus[title] = false;
-    }
+    FormValidation(event.target, fieldValidaitonStatus);
 
-    const status = Object.values(fieldValidaitonStatus).every(
-      (item) => item === true
-    );
-    status
-      ? document.getElementById("form-button").classList.add("active")
-      : document.getElementById("form-button").classList.remove("active");
+    const allFieldsValid = Object.values(fieldValidaitonStatus).every((item) => item);
+    buttonActive("form-button", allFieldsValid);
 
     setFormData({
       name: event.target.name,
@@ -87,6 +90,7 @@ function Form() {
             id="name"
             name="name"
             placeholder="Имя"
+            title="Ім'я має складатися хоча б з 2 букв"
             onChange={handleChange}
             value={formData.name || ""}
             required
@@ -97,6 +101,7 @@ function Form() {
             name="phone"
             pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}"
             placeholder="Телефон"
+            title="+38*** *** **** Будь ласка вкажіть телефон починаючи з 0"
             onChange={handleChange}
             value={formData.phone || ""}
             required
@@ -105,6 +110,8 @@ function Form() {
             type="email"
             id="email"
             name="email"
+            pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,8}"
+            title="Вкажіть пошту у форматі *******@*****.***"
             placeholder="Email"
             onChange={handleChange}
             value={formData.email || ""}
@@ -113,18 +120,27 @@ function Form() {
           <textarea
             id="message"
             name="message"
-            placeholder="Сообщение..."
+            placeholder="Опишіть ваші побажання щодо фотосесії"
+            pattern="[\S\s]+[\S ]{2,3500}"
+            title="Поле не має бути пустим але не більше 3500 символів"
             onChange={handleChange}
             value={formData.message || ""}
             required
           ></textarea>
-          <button type="submit" className="form__button" id="form-button">
+          <button
+            type="submit"
+            className="form__button"
+            id="form-button"
+            title="Будь ласка заповніть форму"
+            disabled={true}
+          >
             Отправить заявку
           </button>
         </fieldset>
       </form>
       <div className="modal-done" id="message-sent">
         <p>✓</p>
+        <div className="modal-done__text">Повідомлення відправлено</div>
       </div>
     </div>
   );

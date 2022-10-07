@@ -43,10 +43,21 @@
         text-align: center;
         transform: scale(0);
         transition: transform ease .5s;
+
+        &__text{
+            position: absolute;
+            top: 260px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #111;
+            font-family: 'Playfair Display';
+            font-size: 22px;
+
+        }
     
         & p {
             position: absolute;
-            top: 180px;
+            top: 140px;
             left: 50%;
             transform: translateX(-50%);
             color: #00856f;
@@ -98,13 +109,13 @@
     }
     .active{
         color: #fff;
-        background-color: #ffaeaf;
-        border: 2px solid #ffaeaf;
+        background-color: #00856f;
+        border: 2px solid #00856f;
             
         &:hover {
-            color: #ffaeaf;
+            color: #00856f;
             background: none;
-            border: 2px solid #ffaeaf;
+            border: 2px solid #00856f;
         }
     }
 }

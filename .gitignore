@@ -10,7 +10,6 @@
 
 # production
 /build
-/src/constants/telegramInfo.js
 
 # misc
 .DS_Store

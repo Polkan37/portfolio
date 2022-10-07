@@ -45,9 +45,18 @@
   transform: scale(0);
   transition: transform ease 0.5s;
 }
+.form__container .modal-done__text {
+  position: absolute;
+  top: 260px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #111;
+  font-family: "Playfair Display";
+  font-size: 22px;
+}
 .form__container .modal-done p {
   position: absolute;
-  top: 180px;
+  top: 140px;
   left: 50%;
   transform: translateX(-50%);
   color: #00856f;
@@ -96,13 +105,13 @@
 }
 .form__contact-form .active {
   color: #fff;
-  background-color: #ffaeaf;
-  border: 2px solid #ffaeaf;
+  background-color: #00856f;
+  border: 2px solid #00856f;
 }
 .form__contact-form .active:hover {
-  color: #ffaeaf;
+  color: #00856f;
   background: none;
-  border: 2px solid #ffaeaf;
+  border: 2px solid #00856f;
 }
 
 @media (max-width: 992px) {
