@@ -6,10 +6,10 @@ function setInputBorder(title, status) {
     : (document.getElementById(title).style.border = "1px solid red");
 }
 
-const FormValidation = ({ name: title, value}, fieldValidaitonStatus) => {
+const formValidation = ({ name: title, value}, fieldValidaitonStatus) => {
   setInputBorder(title, PATTERNS[title].test(value));
   fieldValidaitonStatus[title] = PATTERNS[title].test(value);
     return fieldValidaitonStatus;
 };
 
-export default FormValidation;
+export default formValidation;

@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import FormValidation from "./formValidation";
+import formValidation from "./formValidation";
 import sendForm from "./sendForm";
 
 let fieldValidaitonStatus = {
@@ -66,7 +66,7 @@ function Form() {
   };
 
   const handleChange = (event) => {
-    FormValidation(event.target, fieldValidaitonStatus);
+    formValidation(event.target, fieldValidaitonStatus);
 
     const allFieldsValid = Object.values(fieldValidaitonStatus).every((item) => item);
     buttonActive("form-button", allFieldsValid);
@@ -89,6 +89,7 @@ function Form() {
             type="text"
             id="name"
             name="name"
+            pattern="[a-zA-Zа-яА-Я]{2,30}"
             placeholder="Имя"
             title="Ім'я має складатися хоча б з 2 букв"
             onChange={handleChange}
