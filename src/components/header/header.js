@@ -20,7 +20,6 @@ const customStyles = {
 
 function Header({ title, subTitle, buttonText }) {
   const [modalIsOpen, setIsOpen] = useState(false);
-  Modal.setAppElement(document.getElementById("order-modal"));
 
   function openModal() {
     setIsOpen(true);
