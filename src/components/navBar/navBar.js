@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from "react";
 import "./navBar.css";
 import logo from "../../resources/img/logo.png";
-import navItems from '../../constants/navItems';
+import { navItems}  from '../../constants/header.constants';
 const tabletWidth = 828;
 
 const list = navItems.map((item) => {

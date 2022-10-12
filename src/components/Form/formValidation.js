@@ -1,4 +1,4 @@
-import PATTERNS from "../../constants/form.constants"
+import { PATTERNS } from "../../constants/form.constants"
 
 function setInputBorder(title, status) {
   status

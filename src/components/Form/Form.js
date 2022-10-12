@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from "react";
 import formValidation from "./formValidation";
 import sendForm from "./sendForm";
+import './form.css'
 
 let fieldValidaitonStatus = {
   name: false,

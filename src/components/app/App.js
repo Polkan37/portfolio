@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../Header/Header";
 import AboutSection from "../AboutSection/AboutSection";
 import PortfolioSection from "../PortfolioSection/PortfolioSection";
-import mainInfo from "../../constants/mainInfo";
+import { mainInfo } from "../../constants/header.constants";
 import "./App.css";
 import PriceSection from '../PriceSection/PriceSection';
 import Footer from '../Footer/Footer';
