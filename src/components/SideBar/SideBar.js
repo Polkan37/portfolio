@@ -1,5 +1,5 @@
 import React from "react";
-import links from "../../constants/sideBarIcons";
+import {links} from "../../constants/header.constants";
 import "./sideBar.css";
 
 
