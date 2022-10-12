@@ -1,0 +1,68 @@
+.ReactModal__Overlay{
+    z-index: 100;
+}
+.modal{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    background-color: #85b5b3;
+    margin: auto;
+    color: #fff;
+
+    &__close {
+        margin: 0;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-family: 'Arial';
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        background: none;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .selected{
+        background: #ffaeaf;
+    }
+    &__select-item:hover{
+        background: #ffaeaf;
+    }
+    &__select-item {
+        padding: .45em .9em;
+        border: 2px solid #ffaeaf;
+        background: transparent;
+        color: #fff;
+        border-radius: 4px;
+        font-family: 'Teko';
+        font-size: 20px;
+        line-height: 1.1;
+    }
+    .horisontal-line{
+        position: unset;
+        height: 50px;
+        width: 100%;
+        align-items: flex-end;
+        text-align: center;
+        margin-bottom: .5em;
+    }
+    &__title{
+        margin-top: 0;
+        font-size: 30px;
+    }
+    & .form__container {
+        background: transparent;
+        margin: 0;
+        padding: 0px 15px;
+    }
+    & .form__contact-form{
+        border: none;
+
+    }
+}
