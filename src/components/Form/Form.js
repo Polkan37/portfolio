@@ -89,7 +89,7 @@ function Form() {
             type="text"
             id="name"
             name="name"
-            pattern="[a-zA-Zа-яА-Я]{2,30}"
+            pattern="[a-zA-Zа-яА-Я]+[\S ]{2,30}"
             placeholder="Имя"
             title="Ім'я має складатися хоча б з 2 букв"
             onChange={handleChange}
