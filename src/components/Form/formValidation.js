@@ -1,4 +1,4 @@
-import { PATTERNS } from "../../constants/form.constants"
+import { PATTERNS } from "../../constants/form.constants";
 
 function setInputBorder(title, status) {
   status
@@ -6,10 +6,10 @@ function setInputBorder(title, status) {
     : (document.getElementById(title).style.border = "1px solid red");
 }
 
-const formValidation = ({ name: title, value}, fieldValidaitonStatus) => {
+const validateForm = ({ name: title, value }, fieldValidaitonStatus) => {
   setInputBorder(title, PATTERNS[title].test(value));
   fieldValidaitonStatus[title] = PATTERNS[title].test(value);
-    return fieldValidaitonStatus;
+  return fieldValidaitonStatus;
 };
 
-export default formValidation;
+export default validateForm;

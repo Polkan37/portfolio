@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import formValidation from "./formValidation";
+import validateForm from "./formValidation";
 import sendForm from "./sendForm";
 import './form.css'
 
@@ -9,13 +9,14 @@ let fieldValidaitonStatus = {
   email: false,
   message: false,
 };
+
 function showModal(id, status) {
   status
     ? (document.getElementById(id).style.transform = "scale(1)")
     : (document.getElementById(id).style.transform = "scale(0)");
 }
 
-function buttonActive(id, status) {
+function activateButton(id, status) {
   status
     ? document.getElementById(id).classList.add("active")
     : document.getElementById(id).classList.remove("active");
@@ -27,7 +28,7 @@ function resetFormStyles(state) {
   for (const [key] of Object.entries(state)) {
     document.getElementById(key).style.removeProperty("border");
   }
-  buttonActive("form-button", false);
+  activateButton("form-button", false);
 }
 
 const formReducer = (state, event) => {
@@ -67,10 +68,10 @@ function Form() {
   };
 
   const handleChange = (event) => {
-    formValidation(event.target, fieldValidaitonStatus);
+    validateForm(event.target, fieldValidaitonStatus);
 
     const allFieldsValid = Object.values(fieldValidaitonStatus).every((item) => item);
-    buttonActive("form-button", allFieldsValid);
+    activateButton("form-button", allFieldsValid);
 
     setFormData({
       name: event.target.name,

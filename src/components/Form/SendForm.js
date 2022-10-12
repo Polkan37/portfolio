@@ -2,7 +2,7 @@ import axios from "axios";
 import { URL_API } from "../../constants/form.constants";
 
 function composeMessage({ name, phone, email, message }) {
-  let msg = `📷 <i>Заявка на сайті <b>Dartovich portfolio!</b></i>
+  const msg = `📷 <i>Заявка на сайті <b>Dartovich portfolio!</b></i>
       <b>Ім'я: </b>${name}
       <b>Телефон: </b>${phone}
       <b>Пошта: </b>${email}
