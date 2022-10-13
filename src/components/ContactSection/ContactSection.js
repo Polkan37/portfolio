@@ -10,7 +10,7 @@ function ContactSection() {
         <h2 className="contact__title title">Contact me</h2>
 
         <div className="contact__form form">
-          <Form />
+          <Form place='Contact me section' />
         </div>
       </div>
     </section>

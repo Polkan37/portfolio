@@ -1,8 +1,9 @@
 import axios from "axios";
 import { URL_API } from "../../constants/form.constants";
 
-function composeMessage({ name, phone, email, message }) {
+function composeMessage({ name, phone, email, message }, place) {
   const msg = `📷 <i>Заявка на сайті <b>Dartovich portfolio!</b></i>
+    Форма <b>${place}</b>
       <b>Ім'я: </b>${name}
       <b>Телефон: </b>${phone}
       <b>Пошта: </b>${email}
@@ -31,11 +32,11 @@ const sendTelegramMsgWithFetch = (url, details) => {
   }).then(console.log("msg sent with fetch"));
 };
 
-function sendForm(formData, method = "fetch") {
+function sendForm(formData, place, method = "fetch") {
   const DETAILS = {
     chat_id: process.env.REACT_APP_TELEGRAM_CHAT_ID,
     parse_mode: "html",
-    text: composeMessage(formData),
+    text: composeMessage(formData, place),
   };
   method === "fetch"
     ? sendTelegramMsgWithFetch(URL_API, DETAILS)
