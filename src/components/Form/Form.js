@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from "react";
 import validateForm from "./formValidation";
 import sendForm from "./sendForm";
+import disableScroll from "../disableScroll"
 import './form.css'
 
 let fieldValidaitonStatus = {
@@ -64,6 +65,7 @@ function Form(props) {
     setTimeout(() => {
       setSubmitting(false);
       setFormData({reset: true});
+      disableScroll(false);
       if(props.setOpenModal) props.setOpenModal(false);
     }, 1500);
   };
