@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from "react";
 import validateForm from "./formValidation";
 import sendForm from "./sendForm";
+import disableScroll from "../disableScroll"
 import './form.css'
 
 let fieldValidaitonStatus = {
@@ -50,7 +51,7 @@ const formReducer = (state, event) => {
   };
 };
 
-function Form() {
+function Form(props) {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [submitting, setSubmitting] = useState(false);
 
@@ -59,11 +60,13 @@ function Form() {
 
     setSubmitting(true);
     showModal("message-sent", true);
-    sendForm(formData, 'fetch');
+    sendForm(formData, props.place, 'fetch');
 
     setTimeout(() => {
       setSubmitting(false);
       setFormData({reset: true});
+      disableScroll(false);
+      if(props.setOpenModal) props.setOpenModal(false);
     }, 1500);
   };
 

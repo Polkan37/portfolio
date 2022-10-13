@@ -1,0 +1,97 @@
+@import '../../style/variables';
+
+.ReactModal__Overlay{
+    z-index: 100;
+}
+.modal-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, .8);
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    min-width: 450px;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    z-index: 20;
+
+    &__close {
+        margin: 0;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-family: 'Arial';
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        background: none;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        background-color: #85b5b3;
+        margin: auto;
+        color: #fff;
+    }
+    .selected{
+        background: #ffaeaf;
+    }
+    &__select-item:hover{
+        background: #ffaeaf;
+    }
+    &__select-item {
+        padding: .45em .9em;
+        border: 2px solid #ffaeaf;
+        background: transparent;
+        color: #fff;
+        border-radius: 4px;
+        font-family: 'Teko';
+        font-size: 20px;
+        line-height: 1.1;
+    }
+    .horisontal-line{
+        position: unset;
+        height: 50px;
+        width: 100%;
+        align-items: flex-end;
+        text-align: center;
+        margin-bottom: .5em;
+    }
+    &__title{
+        margin-top: 0;
+        margin-bottom: -5px;
+        font-size: 30px;
+    }
+    & .form__container {
+        background: transparent;
+        margin: 0;
+        padding: 0px 15px;
+    }
+    & .form__contact-form{
+        border: none;
+
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .modal{
+        min-width: 320px;
+
+        &__content{
+            padding-bottom: 10px;
+        }
+    }
+}
