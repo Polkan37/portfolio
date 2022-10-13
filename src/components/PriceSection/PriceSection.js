@@ -1,13 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./price.css"
-
 let cardInfo = [
     { id: 1, name: 'Минимум', price: '100$', options: ['Съемка - 60 минут','Обратботка -  14 дней','Обработка 50 удачных снимков','Консультация по подбору образа'] },
     { id: 2, name: 'Стандарт', price: '200$', options: ['Съемка - 2 часа','Обратботка -  21 день','Обработка 100 удачных снимков','Консультация по подбору образа'] },
     { id: 3, name: 'Премиум', price: '150$/час', options: ['Мин. время - 4 часа','Обратботка -  до 50 дней','Ретушь крупных планов','Обработка всех удачных снимков', 'Фотокнига из 20 кадров'] },
 ];
-const selectCard = (deg = 0, info = cardInfo[1]) => {
+const cards = ['min', 'standart', 'max'];
+
+const selectCard = (deg = 0, id = 'standart', info = cardInfo[1]) => {
     document.querySelector(".triangle").style.transform = 'translateX(' + deg + 'px)';
+    cards.map( el => {document.getElementById(el).classList.remove('selected')});
+    document.getElementById(id).classList.add('selected')
     document.querySelector(".mobile-card__info").innerHTML =`<div class="card__price"> ${info.price}</div> <ul>${getOptions(info.options)} </ul>`;
 } 
 
@@ -20,6 +23,7 @@ const getOptions = (info) => {
 }
 
 function PriceSection() {
+
   return (
     <section className="price">
       <div className="backdrop">
@@ -82,9 +86,9 @@ function PriceSection() {
         <div className="mobile-price__container container">
           
           <div className="mobile-price__titles">
-            <div className="card__title" onClick={() => {selectCard(-110, cardInfo[0])}}>{cardInfo[0].name}</div>
-            <div className="card__title selected" onClick={() => {selectCard(0, cardInfo[1])}}>{cardInfo[1].name}</div>
-            <div className="card__title" onClick={() => {selectCard(100, cardInfo[2])}}>{cardInfo[2].name}</div>
+            <div className="card__title" id="min" onClick={() => {selectCard(-100, 'min', cardInfo[0])}}>{cardInfo[0].name}</div>
+            <div className="card__title selected" id="standart" onClick={() => {selectCard(0, 'standart', cardInfo[1])}}>{cardInfo[1].name}</div>
+            <div className="card__title" id="max" onClick={() => {selectCard(110, 'max', cardInfo[2])}}>{cardInfo[2].name}</div>
           </div>
           
           <div className="triangle"></div>
@@ -101,6 +105,7 @@ function PriceSection() {
             
             <button className="card__button">Заказать съемку</button>
           </div>
+          
         </div>
       </div>
     </section>
