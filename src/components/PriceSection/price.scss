@@ -28,6 +28,8 @@
     }
     .price__card{
         border: 2px solid #ffaeaf;
+        border-radius: 4px;
+        background: rgba($color: #fff, $alpha: 0.8);
         padding: 40px;
         max-width: 300px;
         transition: background-color 0.3s ease;
@@ -38,16 +40,12 @@
 
         &:hover {
             background-color: #fff;
-            &.card__button:hover {
-                background-color: #ffaeaf;
-                color: #fff;
-            }
         }
 
         .card__title {
             position: relative;
             color: #6b6b6b;
-            font-size: 20px;
+            font-size: 26px;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
         }
@@ -97,7 +95,7 @@
             margin-right: 5px;
         }
         .card__button {
-            color: #6b6b6b;
+            color: #fff;
             width: 205px;
             height: 40px;
             margin: 0 auto;
@@ -107,7 +105,8 @@
             text-transform: uppercase;
             justify-content: center;
             transition: background-color 0.3s ease;
-            border: 2px solid #ffaeaf;
+            border: 2px solid rgba(255, 255, 255, .8);
+            border-radius: 4px;
 
             &:hover {
                 background-color: #ffaeaf;
@@ -193,8 +192,8 @@
                 margin: 0px auto 30px auto;
                 width: 100%;
                 text-align: center;
-            }
-            .card__price::after {
+                
+                &::after {
                 content: "";
                 position: absolute;
                 top: 35px;
@@ -207,17 +206,162 @@
     }
 }
 
+
+
+
+// tabs
+
+.block-tabs {
+    display: flex;
+}
+.tabs {
+
+  padding: 25px 15px 15px;
+  text-align: center;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  margin: 25px auto 20px;
+  color: #6b6b6b;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all ease .5s;
+  &::before {
+      content: "Пакет";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+  }
+}
+
+.active-tabs  {
+  color: white;
+  
+  &::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #FFFFFF;
+  transition: all ease-out 3s;
+  }
+}
+  
+  
+  
+  button {
+    border: none;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    background: transparent;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 324px;
+    margin: 0 auto;
+    height: 100%;
+    color: #6b6b6b;
+    display: none;
+    
+    & h2 {
+        position: relative;
+        color: #6b6b6b;
+        font-size: 25px;
+        margin: 0px auto 30px auto;
+        width: 100%;
+        text-align: center;
+        
+        &::after {
+        content: "";
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 100%;
+        max-width: 250px;
+        background-color: #ffaeaf;
+        }
+    }
+
+    & ul {
+        text-align: left;
+
+        & li {
+            margin-bottom: 20px;
+        }
+        & li::before {
+            content: "✓";
+            color: #00856f;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+    }
+    & .card__button {
+        color: #6b6b6b;
+        width: 205px;
+        height: 40px;
+        margin: 0 auto;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+        border: 2px solid #ffaeaf;
+
+        &:hover {
+            background-color: #ffaeaf;
+            color: #fff;
+        }
+    }
+  }
+  
+  .content p {
+    width: 100%;
+    height: 100%;
+  }
+  .active-content {
+    display: block;
+  }
+  .tabs__container {
+    display: none;
+    }
+}
+
+
 @media (max-width: $tablet-width) {
     .price__container {
         display: none !important;
+    }
+    .tabs__container {
+        display: block !important;
     }
     .mobile-price__container {
         display: flex !important;
     }
 
 }
-@media (min-width: $mobile-width) {
+@media (max-width: $mobile-width) {
     .mobile-price__container {
         margin-top: 0px !important;
+    }
+    .block-tabs {
+        padding-top: 20px !important;
     }
 }
