@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import "./navBar.css";
+import disableScroll from "../disableScroll";
 import logo from "../../resources/img/logo.png";
 import { navItems } from "../../constants/header.constants";
 const tabletWidth = 828;
@@ -53,10 +54,12 @@ function NavBar() {
 
   const updateMenu = () => {
     if (!isMenuOpen) {
+      disableScroll(true);
       setBurgerButtonClass("nav__button fixed-top-right");
       setBurgerClass("nav__button-line clicked");
       setMenuClass("nav__sidebar");
     } else {
+      disableScroll(false);
       setBurgerButtonClass("nav__button");
       setBurgerClass("nav__button-line");
       setMenuClass("nav__sidebar hidden");
@@ -66,7 +69,7 @@ function NavBar() {
 
   return (
     <div className="nav container">
-      <a href="#top" className="nav__logo">
+      <a href="/" className="nav__logo">
         <img src={logo} alt="Dartovich site logo" />
       </a>
       <nav className="nav__list" ref={ref}>
@@ -86,7 +89,8 @@ function NavBar() {
                   smooth={true}
                   offset={-50}
                   duration={500}
-                  onClick={updateMenu}
+                  onClick={() => isMenuOpen ? updateMenu() : setIsMenuOpen(false)}
+                  
                 >
                   {item.name}
                 </Link>

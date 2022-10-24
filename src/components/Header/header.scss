@@ -6,6 +6,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: 10rem;
 
     .container{
         display: flex;
@@ -47,6 +48,7 @@
     .hero__button {
         margin-left: 20px;
     }
+    
     @media (max-width: $small-desktop-width) {
         .hero__title {
             font-size: 75px;
@@ -67,5 +69,10 @@
             font-size: 65px;
             max-width: 290px;
         }
+    }
+}
+@media (max-width: $small-desktop-width) {
+    .hero {
+        align-items: flex-start;
     }
 }
