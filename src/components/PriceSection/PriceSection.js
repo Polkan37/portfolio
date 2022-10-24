@@ -13,7 +13,7 @@ function PriceSection() {
       <section className="price">
         <div className="backdrop">
           <div className="horisontal-line">
-            <h2 className="portfolio__title title">Price</h2>
+            <h2 className="portfolio__title title" id="price">Price</h2>
           </div>
           <Tabs setOpenModal={setModalOpen} place={setButtonClickPlace} />
           <Cards setOpenModal={setModalOpen} place={setButtonClickPlace} />
