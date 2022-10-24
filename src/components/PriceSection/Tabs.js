@@ -41,7 +41,7 @@ function Tabs(props) {
                 className="card__button"
                 onClick={() => {
                   props.setOpenModal(true);
-                  props.place(el.name);
+                  props.place(`Замовлення: пакет ${el.name}`);
                 }}
               >
                 Заказать съемку
