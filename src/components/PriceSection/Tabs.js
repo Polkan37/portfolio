@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cardInfo } from '../../constants/price.constants'
+import { cardInfo } from "../../constants/price.constants";
 
 function Tabs(props) {
   const [toggleState, setToggleState] = useState(1);
@@ -39,7 +39,10 @@ function Tabs(props) {
               </ul>
               <button
                 className="card__button"
-                onClick={() => {props.setOpenModal(true); props.place(el.name)}}
+                onClick={() => {
+                  props.setOpenModal(true);
+                  props.place(el.name);
+                }}
               >
                 Заказать съемку
               </button>
