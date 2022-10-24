@@ -28,6 +28,8 @@
     }
     .price__card{
         border: 2px solid #ffaeaf;
+        border-radius: 4px;
+        background: rgba($color: #fff, $alpha: 0.8);
         padding: 40px;
         max-width: 300px;
         transition: background-color 0.3s ease;
@@ -38,16 +40,12 @@
 
         &:hover {
             background-color: #fff;
-            &.card__button:hover {
-                background-color: #ffaeaf;
-                color: #fff;
-            }
         }
 
         .card__title {
             position: relative;
             color: #6b6b6b;
-            font-size: 20px;
+            font-size: 26px;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
         }
@@ -97,7 +95,7 @@
             margin-right: 5px;
         }
         .card__button {
-            color: #6b6b6b;
+            color: #fff;
             width: 205px;
             height: 40px;
             margin: 0 auto;
@@ -107,7 +105,8 @@
             text-transform: uppercase;
             justify-content: center;
             transition: background-color 0.3s ease;
-            border: 2px solid #ffaeaf;
+            border: 2px solid rgba(255, 255, 255, .8);
+            border-radius: 4px;
 
             &:hover {
                 background-color: #ffaeaf;

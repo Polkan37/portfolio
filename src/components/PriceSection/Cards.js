@@ -19,7 +19,7 @@ function Cards(props) {
         </div>
 
         <button
-                className="card__button"
+                className="card__button button"
                 onClick={() => {props.setOpenModal(true); props.place(el.name)}}
               >
                 Заказать съемку
