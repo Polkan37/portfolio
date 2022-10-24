@@ -340,12 +340,18 @@
   .active-content {
     display: block;
   }
+  .tabs__container {
+    display: none;
+    }
 }
 
 
 @media (max-width: $tablet-width) {
     .price__container {
         display: none !important;
+    }
+    .tabs__container {
+        display: block !important;
     }
     .mobile-price__container {
         display: flex !important;

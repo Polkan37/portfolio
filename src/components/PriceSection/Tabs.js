@@ -1,40 +1,5 @@
 import { useState } from "react";
-let cardInfo = [
-  {
-    id: "min",
-    name: "Минимум",
-    price: "100$",
-    options: [
-      "Съемка - 60 минут",
-      "Обратботка -  14 дней",
-      "Обработка 50 удачных снимков",
-      "Консультация по подбору образа",
-    ],
-  },
-  {
-    id: "standart",
-    name: "Стандарт",
-    price: "200$",
-    options: [
-      "Съемка - 2 часа",
-      "Обратботка -  21 день",
-      "Обработка 100 удачных снимков",
-      "Консультация по подбору образа",
-    ],
-  },
-  {
-    id: "max",
-    name: "Премиум",
-    price: "150$/час",
-    options: [
-      "Мин. время - 4 часа",
-      "Обратботка -  до 50 дней",
-      "Ретушь крупных планов",
-      "Обработка всех удачных снимков",
-      "Фотокнига из 20 кадров",
-    ],
-  },
-];
+import { cardInfo } from '../../constants/price.constants'
 
 function Tabs(props) {
   const [toggleState, setToggleState] = useState(1);
@@ -44,7 +9,7 @@ function Tabs(props) {
   };
 
   return (
-    <div>
+    <div className="tabs__container">
       <div className="block-tabs">
         {cardInfo.map((el, id) => {
           return (
@@ -74,7 +39,7 @@ function Tabs(props) {
               </ul>
               <button
                 className="card__button"
-                onClick={() => props.setOpenModal(true)}
+                onClick={() => {props.setOpenModal(true); props.place(el.name)}}
               >
                 Заказать съемку
               </button>
