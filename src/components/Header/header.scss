@@ -6,7 +6,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 10rem;
 
     .container{
         display: flex;
@@ -64,6 +63,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            
+            .hero__button {
+                margin-left: 0 !important;
+            }
         }
         .hero__title {
             font-size: 65px;
@@ -74,5 +77,6 @@
 @media (max-width: $small-desktop-width) {
     .hero {
         align-items: flex-start;
+        padding-top: 10rem;
     }
 }

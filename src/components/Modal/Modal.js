@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Form from "../Form/Form";
 import disableScroll from "../disableScroll";
 import "./modal.css";
