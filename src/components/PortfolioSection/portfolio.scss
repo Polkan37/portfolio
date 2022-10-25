@@ -2,7 +2,7 @@
 @import '../../style/variables';
 
 .portfolio {
-    background: url('../../resources/img/bg-galery.jpg');
+    background: url('../../resources/img/bg-galery-1.jpg');
     background-size: cover;
     display: flex;
     justify-content: flex-start;
@@ -63,21 +63,15 @@
 }
 .portfolio__items{
     column-count: 3;
-    -webkit-columns: 3;
-    -moz-columns: 3;
 }
 
 @media (max-width: $tablet-width) {
     .portfolio__items{
         column-count: 2;
-        -webkit-columns: 2;
-        -moz-columns: 2;
     }
 }
 @media (max-width: $mobile-width) {
     .portfolio__items{
         column-count: 1;
-        -webkit-columns: 1;
-        -moz-columns: 1;
     }
 }

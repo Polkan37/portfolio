@@ -313,7 +313,7 @@
         }
     }
     & .card__button {
-        color: #6b6b6b;
+        color: #fff;
         width: 205px;
         height: 40px;
         margin: 0 auto;
@@ -323,7 +323,9 @@
         text-transform: uppercase;
         justify-content: center;
         transition: background-color 0.3s ease;
-        border: 2px solid #ffaeaf;
+        background: rgba($color: #00856f, $alpha: .8);
+        border: 2px solid rgba(255, 255, 255, .8);
+        border-radius: 4px;
 
         &:hover {
             background-color: #ffaeaf;

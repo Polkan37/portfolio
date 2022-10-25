@@ -38,7 +38,7 @@ function Tabs(props) {
                 })}
               </ul>
               <button
-                className="card__button"
+                className="card__button button"
                 onClick={() => {
                   props.setOpenModal(true);
                   props.place(`Замовлення: пакет ${el.name}`);
