@@ -5,7 +5,7 @@ function Cards(props) {
     <div className="price__container container">
       {cardInfo.map((el, id) => {
         return (
-          <div className="price__card card">
+          <div className="price__card card" key={`card-${id}`}>
             <div className="card__title">{el.name}</div>
 
             <div className="card__price">{el.price}</div>
@@ -13,7 +13,7 @@ function Cards(props) {
             <div className="card__info">
               <ul>
                 {el.options.map((el) => {
-                  return <li>{el}</li>;
+                  return <li key={`item-${el}`}>{el}</li>;
                 })}
               </ul>
             </div>

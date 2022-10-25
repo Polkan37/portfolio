@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import Masonry from "../Masonry/Masonry";
 import "./portfolio.css";
-import imageUrls from '../../constants/portfolioImages';
+import {imageUrls} from '../../constants/portfolioImages';
 const minAmounOfImageInGallery = 7;
 
 function PortfolioSection() {
