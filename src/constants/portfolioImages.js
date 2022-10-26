@@ -10,19 +10,18 @@ import photo9 from '../resources/img/portfolio/background-2.jpg';
 import photo10 from '../resources/img/portfolio/photo-3.png';
 import photo11 from '../resources/img/portfolio/photo-2.png';
 
-const imageUrls = [
+export const imageUrls = [
     { id: 1, url: photo1, width: 1, height: 1, alt: '1'},
-    { id: 2, url: photo2, width: 1, height: 1, alt: '2'}, 
-    { id: 3, url: photo3, width: 1, height: 1, alt: '3'},
-    { id: 4, url: photo4, width: 1, height: 1, alt: '4'}, 
-    { id: 5, url: photo5, width: 1, height: 1, alt: '5'}, 
-    { id: 6, url: photo6, width: 1, height: 1, alt: '6'}, 
-    { id: 7, url: photo7, width: 1, height: 1, alt: '7'}, 
-    { id: 8, url: photo8, width: 1, height: 1, alt: '8'}, 
+    { id: 2, url: photo10, width: 1, height: 1, alt: '3'},
+    { id: 3, url: photo2, width: 1, height: 1, alt: '2'}, 
+    { id: 4, url: photo7, width: 1, height: 1, alt: '9'},
+    { id: 5, url: photo4, width: 1, height: 1, alt: '4'}, 
+    { id: 6, url: photo2, width: 1, height: 1, alt: '2'}, 
+    { id: 7, url: photo5, width: 1, height: 1, alt: '5'}, 
+    { id: 8, url: photo6, width: 1, height: 1, alt: '6'}, 
     { id: 9, url: photo9, width: 1, height: 1, alt: '9'}, 
-    { id: 10, url: photo10, width: 1, height: 1, alt: '10'}, 
-    { id: 11, url: photo11, width: 1, height: 1, alt: '11'},
-    { id: 12, url: photo3, width: 1, height: 1, alt: '12'}, 
+    { id: 10, url: photo3, width: 1, height: 1, alt: '3'}, 
+    { id: 11, url: photo8, width: 1, height: 1, alt: '9'},
+    { id: 12, url: photo11, width: 1, height: 1, alt: '11'},
+    { id: 13, url: photo1, width: 1, height: 1, alt: '1'},
     ];
-export default imageUrls;
-    

@@ -16,6 +16,7 @@ function Tabs(props) {
             <button
               className={toggleState === id ? "tabs active-tabs" : "tabs"}
               onClick={() => toggleTab(id)}
+              key={el+id}
             >
               {el.name}
             </button>
@@ -30,11 +31,12 @@ function Tabs(props) {
               className={
                 toggleState === id ? "content  active-content" : "content"
               }
+              key={el+id}
             >
               <h2>{el.price}</h2>
               <ul>
                 {el.options.map((el) => {
-                  return <li>{el}</li>;
+                  return <li key={el}>{el}</li>;
                 })}
               </ul>
               <button
@@ -43,6 +45,7 @@ function Tabs(props) {
                   props.setOpenModal(true);
                   props.place(`Замовлення: пакет ${el.name}`);
                 }}
+                key={el+id}
               >
                 Заказать съемку
               </button>
