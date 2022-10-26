@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cardInfo } from "../../constants/price.constants";
+import { buttonNames} from '../../constants/main.constants'
 
 function Tabs(props) {
   const [toggleState, setToggleState] = useState(1);
@@ -47,7 +48,7 @@ function Tabs(props) {
                 }}
                 key={el+id}
               >
-                Заказать съемку
+                {buttonNames.orderPhoto}
               </button>
             </div>
           );

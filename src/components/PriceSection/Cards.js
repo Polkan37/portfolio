@@ -1,4 +1,5 @@
 import { cardInfo } from "../../constants/price.constants";
+import { buttonNames} from '../../constants/main.constants';
 
 function Cards(props) {
   return (
@@ -25,7 +26,7 @@ function Cards(props) {
                 props.place(`Замовлення: пакет ${el.name}`);
               }}
             >
-              Заказать съемку
+              {buttonNames.orderPhoto}
             </button>
           </div>
         );

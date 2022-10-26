@@ -3,6 +3,7 @@ import "./price.css";
 import Tabs from "./Tabs";
 import Modal from "../Modal/Modal";
 import Cards from "./Cards";
+import {sectionTitles, buttonNames} from '../../constants/main.constants'
 
 function PriceSection() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,7 +14,7 @@ function PriceSection() {
       <section className="price">
         <div className="backdrop">
           <div className="horisontal-line">
-            <h2 className="portfolio__title title" id="price">Price</h2>
+            <h2 className="portfolio__title title" id="price">{sectionTitles.price}</h2>
           </div>
           <Tabs setOpenModal={setModalOpen} place={setButtonClickPlace} />
           <Cards setOpenModal={setModalOpen} place={setButtonClickPlace} />
@@ -23,7 +24,7 @@ function PriceSection() {
       {modalOpen && (
         <Modal
           setOpenModal={setModalOpen}
-          title="Замовити"
+          title={buttonNames.order}
           place={buttonClickPlace}
         />
       )}

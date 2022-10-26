@@ -1,5 +1,5 @@
 import React from "react";
-import {links} from "../../constants/header.constants";
+import {links} from "../../constants/main.constants";
 import "./sideBar.css";
 
 
@@ -13,7 +13,7 @@ function SideBar() {
         {links.map(function(el, id){
           return (
                     <li key={id} className="sidebar__item">
-                      <a href="/" target="_blank">
+                      <a href={el.href} target="_blank" rel="noreferrer">
                         <img src={el.url} alt={el.alt} />
                       </a>
                     </li>)

@@ -1,6 +1,6 @@
 import React from "react";
-import {links} from "../../constants/header.constants";
 import logo from "../../resources/img/logo.png";
+import {footerTexts, links} from '../../constants/main.constants'
 import "./footer.css";
 
 function Footer() {
@@ -8,11 +8,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer__container container">
         <div className="footer__info">
-          <div className="footer__header">Контактная информация</div>
+          <div className="footer__header">{footerTexts.header}</div>
           <div className="footer__info-text">
-            <p><span>телефон:</span> +380 12 345 67 89</p>
-            <p><span>E-mail:</span> info@gmail.com</p>
-            <p><span>Адрес:</span> г.Кривой Рог, ул.Гагарина</p>
+            <p><span>{footerTexts.phoneTitle}:</span> {footerTexts.phoneContent}</p>
+            <p><span>{footerTexts.emailTitle}:</span> {footerTexts.emailContent}</p>
+            <p><span>{footerTexts.adressTitle}:</span> {footerTexts.adressContent}</p>
           </div>
         </div>
         <a href="#top" className="footer__logo">
@@ -24,12 +24,12 @@ function Footer() {
           />
         </a>
         <div className="footer__social-links">
-          <div className="footer__header">Социальные сети</div>
+          <div className="footer__header">{footerTexts.socialsTitle}</div>
           <ul className="footer__social-links-list">
             {links.map(function(el, id) {
               return (
                 <li key={id} className="social-links__item">
-                  <a href="/" target="_blank">
+                  <a href={el.href} target="_blank" rel="noreferrer">
                     <img src={el.url} alt={el.alt} />
                   </a>
                 </li>

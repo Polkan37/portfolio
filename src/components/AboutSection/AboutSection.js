@@ -1,5 +1,6 @@
 import React from 'react'
 import "./about.css";
+import {sectionTitles} from '../../constants/main.constants'
 import photo from "../../resources/img/me.jpg";
 
 
@@ -8,7 +9,7 @@ function AboutSection() {
     <section className="about">
         <div className="backdrop">
             <div className="horisontal-line">
-                <h2 className="about__title title" id="about">About me</h2>
+                <h2 className="about__title title" id="about">{sectionTitles.about}</h2>
             </div>
 
             <div className="about__contaioner container">

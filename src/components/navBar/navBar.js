@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import "./navBar.css";
 import disableScroll from "../disableScroll";
 import logo from "../../resources/img/logo.png";
-import { navItems } from "../../constants/header.constants";
+import { navItems } from "../../constants/main.constants";
 const tabletWidth = 828;
 
 function getWindowSize() {
@@ -36,6 +36,7 @@ function NavBar() {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, [windowSize.innerWidth]);
+
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       if (isMenuOpen && ref.current && !ref.current.contains(e.target)) {

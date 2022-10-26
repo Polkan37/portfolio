@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Masonry from "./Masonry";
-import "./portfolio.css";
 import { imageUrls } from "../../constants/portfolioImages";
+import {sectionTitles, buttonNames} from '../../constants/main.constants';
+import "./portfolio.css";
 const minAmounOfImageInGallery = 5;
 
 function PortfolioSection() {
@@ -19,7 +20,7 @@ function PortfolioSection() {
       <div className="backdrop">
         <div className="horisontal-line">
           <h2 className="portfolio__title title" id="portfolio">
-            Portfolio
+            {sectionTitles.portfolio}
           </h2>
         </div>
         <div className="portfolio__container container">
@@ -32,7 +33,7 @@ function PortfolioSection() {
             onClick={showMore}
             style={{ display: display }}
           >
-            Show more
+            {buttonNames.showMore}
           </button>
         </div>
       </div>

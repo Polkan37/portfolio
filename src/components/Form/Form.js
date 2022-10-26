@@ -2,6 +2,7 @@ import React, { useReducer, useState } from "react";
 import validateForm from "./formValidation";
 import sendForm from "./sendForm";
 import disableScroll from "../disableScroll"
+import {formText} from '../../constants/main.constants'
 import './form.css'
 
 let fieldValidaitonStatus = {
@@ -95,8 +96,8 @@ function Form(props) {
             id="name"
             name="name"
             pattern="[a-zA-Zа-яА-Я]+[\S ]{2,30}"
-            placeholder="Имя"
-            title="Ім'я має складатися хоча б з 2 букв"
+            placeholder={formText.name}
+            title={formText.nameHint}
             onChange={handleChange}
             value={formData.name || ""}
             required
@@ -106,8 +107,8 @@ function Form(props) {
             id="phone"
             name="phone"
             pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{4}"
-            placeholder="Телефон"
-            title="+38*** *** **** Будь ласка вкажіть телефон починаючи з 0"
+            placeholder={formText.phone}
+            title={formText.phoneHint}
             onChange={handleChange}
             value={formData.phone || ""}
             required
@@ -117,8 +118,8 @@ function Form(props) {
             id="email"
             name="email"
             pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,8}"
-            title="Вкажіть пошту у форматі *******@*****.***"
-            placeholder="Email"
+            title={formText.emailHint}
+            placeholder={formText.email}
             onChange={handleChange}
             value={formData.email || ""}
             required
@@ -126,9 +127,9 @@ function Form(props) {
           <textarea
             id="message"
             name="message"
-            placeholder="Опишіть ваші побажання щодо фотосесії"
+            placeholder={formText.messageText}
             pattern="[\S\s]+[\S ]{2,3500}"
-            title="Поле не має бути пустим але не більше 3500 символів"
+            title={formText.messageHint}
             onChange={handleChange}
             value={formData.message || ""}
             required
@@ -137,16 +138,16 @@ function Form(props) {
             type="submit"
             className="form__button"
             id="form-button"
-            title="Будь ласка заповніть форму"
+            title={formText.buttonHint}
             disabled={true}
           >
-            Отправить заявку
+            {formText.button}
           </button>
         </fieldset>
       </form>
       <div className="modal-done" id="message-sent">
         <p>✓</p>
-        <div className="modal-done__text">Повідомлення відправлено</div>
+        <div className="modal-done__text">{formText.sent}</div>
       </div>
     </div>
   );

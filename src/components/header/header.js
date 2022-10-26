@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import SideBar from "../SideBar/SideBar";
+import { mainInfo, buttonNames } from "../../constants/main.constants";
 import Modal from "../Modal/Modal";
 import "./header.css";
 
-function Header({ title, subTitle, buttonText }) {
+function Header() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -13,15 +14,15 @@ function Header({ title, subTitle, buttonText }) {
       <section className="hero">
         <div className="container">
           <div className="hero__content">
-            <h1 className="hero__title">{title}</h1>
-            <div className="hero__text">{subTitle}</div>
+            <h1 className="hero__title">{mainInfo.title}</h1>
+            <div className="hero__text">{mainInfo.subTitle}</div>
             <button className="hero__button button" onClick={() => setModalOpen(true)}>
-              {buttonText}
+              {mainInfo.buttonText}
             </button>
           </div>
         </div>
         <SideBar />
-        {modalOpen && <Modal setOpenModal={setModalOpen} title='Замовити' place='Button in hero section'/>}
+        {modalOpen && <Modal setOpenModal={setModalOpen} title={buttonNames.order} place='Button in hero section'/>}
       </section>
     </header>
   );
